@@ -1,0 +1,30 @@
+checkpoint='./checkpoints/fenzi_fenmu/add_plat_qiu/FCN/bs8_lr0.001_1000'
+# checkpoint='./checkpoints/fenzi_fenmu/YM_data/Res_Net_50/bs8_lr0.001_400'
+# checkpoint='./checkpoints/fenzi_fenmu/add_plat_qiu/FCN/bs8_lr0.001_1000'
+# save_dir='./results/fenzi_fenmu/multi_model/Channel_attention/bs8_lr0.001_200'
+# save_dir='./results/fenzi_fenmu/multi_model/Spatial_attention/bs8_lr0.001_200'
+# save_dir='./results/fenzi_fenmu/multi_model/CBAM_attention/bs8_lr0.001_200'
+save_dir='./results/fenzi_fenmu/multi_model/metal_all/FCN/bs8_lr0.001_1000'
+# save_dir='./results/fenzi_fenmu/multi_model/plat_qiu/FCN/bs8_lr0.001_1000/qiu_plat/plat'
+# save_dir='./results/fenzi_fenmu/multi_model/plat_qiu/FCN/bs8_lr0.001_1000/qiu_plat/qiu1'
+# save_dir='./results/fenzi_fenmu/multi_model/plat_qiu/FCN/bs8_lr0.001_1000/qiu_plat/qiu2'
+dir_img='/home/wangh20/data/structure/metal_dataset/Network_use_small_1_fenzi_fenmu/images_GT'
+# dir_img='/home/wangh20/data/structure/YM_dataset/images_GT'
+# dir_img='/home/wangh20/data/structure/metal_dataset/qiu_plat_fenzi_fenmu/plat/images_GT'
+# dir_img='/home/wangh20/data/structure/metal_dataset/qiu_plat_fenzi_fenmu/qiu_1/images_GT'
+# dir_img='/home/wangh20/data/structure/metal_dataset/qiu_plat_fenzi_fenmu/qiu_2/images_GT'
+dir_mask='/home/wangh20/data/structure/metal_dataset/Network_use_small_1_fenzi_fenmu/'
+# dir_mask='/home/wangh20/data/structure/YM_dataset'
+# dir_mask='/home/wangh20/data/structure/metal_dataset/qiu_plat_fenzi_fenmu/plat'
+# dir_mask='/home/wangh20/data/structure/metal_dataset/qiu_plat_fenzi_fenmu/qiu_1'
+# dir_mask='/home/wangh20/data/structure/metal_dataset/qiu_plat_fenzi_fenmu/qiu_2'
+gpu_id=0
+scale=1
+
+        python ../test.py \
+        --load=$checkpoint \
+        --gpu-id=$gpu_id \
+        --dir-img=$dir_img \
+        --dir-mask=$dir_mask \
+        --scale=$scale \
+        --save-dir=$save_dir 

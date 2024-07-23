@@ -1,0 +1,32 @@
+load_checkpoint=''
+gpu_id=3
+lr=0.001
+bs=8
+epochs=400
+validation=10
+# dir_img='/home/wangh20/data/structure/YM_use_dataset/right/images'
+# dir_img='/home/wangh20/data/structure/val_effect_freq/right/4/train/images'
+# dir_img='/home/wangh20/data/structure/SIDO/data_use/grate'
+dir_img='/home/wangh20/data/structure/metal_dataset/Network_use_small_1_fenzi_fenmu/images_GT'
+# dir_img='/home/wangh20/data/structure/metal_dataset/Network_use_small_1_fenzi_fenmu/images'
+# dir_img='/home/wangh20/data/structure/YM_dataset/images_GT'
+# dir_mask='/home/wangh20/data/structure/val_effect_freq/right/4/train/GT'
+# dir_mask='/home/wangh20/data/structure/YM_dataset/'
+dir_mask='/home/wangh20/data/structure/metal_dataset/Network_use_small_1_fenzi_fenmu/'
+# save_checkpoint_path='./checkpoints/fenzi_fenmu/channel_attention/bs4_lr0.005_200'
+# save_checkpoint_path='./checkpoints/fenzi_fenmu/multi_model/Channel_attention/bs8_lr0.001_200'
+# save_checkpoint_path='./checkpoints/fenzi_fenmu/multi_model/Spatial_attention/bs8_lr0.001_200'
+# save_checkpoint_path='./checkpoints/fenzi_fenmu/YM_data/FCN/bs8_lr0.001_400'
+save_checkpoint_path='./checkpoints/fenzi_fenmu/fenzi_fenmu/add_plat_qiu/Res_UNet_101_attention/bs8_lr0.001_1000'
+# save_checkpoint_path='./checkpoints/fenzi_fenmu/multi_model/UNet_9:1/bs8_lr0.001_1000'
+
+        python ../train_811_add_data.py \
+        --gpu_id=$gpu_id \
+        --learning_rate=$lr \
+        --batch_size=$bs \
+        --epochs=$epochs \
+        --validation=$validation \
+        --dir_img=$dir_img \
+        --dir_mask=$dir_mask \
+        --save_checkpoint_path=$save_checkpoint_path \
+        --load_checkpoint=$load_checkpoint 
